@@ -11,6 +11,8 @@ Filling the form and clicking "CreateSite" form button triggers MS Flows (possib
 
 ## Solution Components ##
 The following components comprise The Solution...
-1. 
-2. 
-3. 
+1. BUTTON: btnCreateProjectSite 
+2. BUTTON-CLICK-HANDLER: ? (actualy the TRIGGER of an MSFLOW - see below...)
+3. LIST: PROJECT_SITES_INFO
+4. LIST: PROJECT_SITE_COLLECTIONS_INFO
+5. FLOW: btnCreateProjectSite_Click_Handler
