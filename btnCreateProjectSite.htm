@@ -1,0 +1,30 @@
+<script type="text/javascript">
+    //MVTEST 2018 08 04:  User-Defined Function to Open Dialog Framework
+    function OpenDialog(strPageURL)
+    {
+      var dialogOptions = SP.UI.$create_DialogOptions();
+      dialogOptions.url = strPageURL;// URL of the Page
+      dialogOptions.title = 'Welcome to SharePoint'
+      dialogOptions.allowMaximize= true
+      dialogOptions.width = 750; // Width of the Dialog
+      dialogOptions.height = 500; // Height of the Dialog
+      dialogOptions.dialogReturnValueCallback = Function.createDelegate( null, CloseCallback); // Function to capture dialog closed event
+      SP.UI.ModalDialog.showModalDialog(dialogOptions); // Open the Dialog
+      return false;
+    }
+    
+    // Dialog close event capture function
+    function CloseCallback(strReturnValue, target)
+    {
+      if (strReturnValue === SP.UI.DialogResult.OK) // Perform action on Ok.
+        {
+       alert("User clicked Ok!");
+        }
+      if (strReturnValue === SP.UI.DialogResult.cancel) // Perform action on Cancel.
+       {
+       alert( "User clicked Cancel!");
+       }
+    }
+    
+    </script>
+    <a onclick="OpenDialog('http://bing.com');">open dialog</a>​
